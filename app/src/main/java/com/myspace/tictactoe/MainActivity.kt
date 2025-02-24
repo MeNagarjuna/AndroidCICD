@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Composable
 fun TicTacToeGame() {
     var board by remember { mutableStateOf(List(3) { List(3) { "" } }) }
@@ -78,6 +79,7 @@ fun TicTacToeGame() {
         board.forEachIndexed { rowIndex, row ->
             Row {
                 row.forEachIndexed { colIndex, cell ->
+                    
                     Box(
                         modifier = Modifier
                             .size(100.dp)
@@ -105,10 +107,10 @@ fun TicTacToeGame() {
                             color = if (cell == "X") Color.Blue else Color.Red
                         )
                     }
-                    Spacer(modifier = Modifier.width(8.dp))
+                    Spacer(modifier = Modifier.width(16.dp))
                 }
             }
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(16.dp))
         }
 
         Spacer(modifier = Modifier.height(16.dp))
